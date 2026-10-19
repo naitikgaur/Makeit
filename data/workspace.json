@@ -1,0 +1,62 @@
+{
+  "id": "demo-workspace",
+  "name": "MakeEase Support Preview",
+  "description": "A focused workspace for preparing support drafts before a human decides what happens next.",
+  "goal": "Turn one support request into a grounded, reviewable draft.",
+  "timezone": "UTC",
+  "plan": "starter",
+  "planId": "starter",
+  "owner": {
+    "name": "Local demo",
+    "role": "Owner"
+  },
+  "usage": {
+    "included": 15000,
+    "topup": 0,
+    "used": 0,
+    "reserved": 0,
+    "limit": 15000,
+    "available": 15000
+  },
+  "integrations": [
+    { "id": "gmail", "name": "Gmail", "connected": false, "detail": "Not configured · OAuth placeholder", "category": "Communication" },
+    { "id": "slack", "name": "Slack", "connected": false, "detail": "Not configured", "category": "Communication" },
+    { "id": "github", "name": "GitHub", "connected": false, "detail": "Not configured", "category": "Engineering" },
+    { "id": "notion", "name": "Notion", "connected": false, "detail": "Not configured", "category": "Knowledge" },
+    { "id": "stripe", "name": "Stripe", "connected": false, "detail": "Not configured", "category": "Finance" },
+    { "id": "linear", "name": "Linear", "connected": false, "detail": "Not configured", "category": "Engineering" }
+  ],
+  "workflows": [
+    {
+      "id": "support-triage",
+      "name": "Customer support triage",
+      "description": "Classify a support request, ground a draft in approved policy, and hold it for review.",
+      "templateId": "customer-support-triage",
+      "model": "gpt-oss",
+      "status": "active",
+      "runs": 0,
+      "credits": 0,
+      "requiresApproval": true,
+      "budgetCredits": 50,
+      "createdAt": "2026-01-01T09:00:00.000Z",
+      "updatedAt": "2026-01-01T09:00:00.000Z"
+    }
+  ],
+  "runs": [],
+  "approvals": [],
+  "activity": [
+    { "id": "activity-support-ready", "action": "Support triage ready", "detail": "Run one synthetic request to prepare your first review packet.", "createdAt": "2026-01-01T09:00:00.000Z" }
+  ],
+  "sources": [
+    { "id": "support-policy", "name": "Support review policy", "detail": "Refund and account requests require human confirmation. Never promise eligibility until the reviewer checks the account. Keep customer-facing sending disabled until a reviewer approves the exact draft.", "status": "approved", "createdAt": "2026-01-01T09:00:00.000Z" }
+  ],
+  "ledger": [],
+  "auditEvents": [],
+  "operations": [],
+  "settings": {
+    "approvalMode": true,
+    "smartRouting": true,
+    "weeklyBrief": true,
+    "darkMode": false
+  }
+}

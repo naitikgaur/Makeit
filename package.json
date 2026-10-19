@@ -1,0 +1,16 @@
+{
+  "name": "makeease-v1-local-adapter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependency-free MakeEase v1 launch candidate for approval-first support operations.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node server-smoke.js && node --test lib/ai.test.js lib/executor.test.js server-contract.test.js v1-product.test.js",
+    "smoke": "node server-smoke.js",
+    "check": "node --check server.js && node --check lib/auth-store.js && node --check lib/ai.js && node --check lib/executor.js && node --check lib/validation.js && node --check v1-product.test.js"
+  }
+}
